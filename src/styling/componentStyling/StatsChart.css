@@ -1,0 +1,62 @@
+.stats-chart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  
+  .time-range-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  
+  .filter-btn {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-btn:hover {
+    background: #f0f0f0;
+  }
+  
+  .filter-btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+  
+  .chart-wrapper {
+    height: 400px;
+    width: 100%;
+  }
+
+  /* Add mobile-specific styles */
+  @media screen and (max-width: 768px) {
+    .stats-chart-container {
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    .time-range-filters {
+      flex-wrap: wrap;
+      gap: 5px;
+      padding: 0 5px;
+    }
+
+    .filter-btn {
+      padding: 6px 12px;
+      font-size: 12px;
+      min-width: 70px;
+    }
+
+    .chart-wrapper {
+      height: 250px;
+    }
+  }

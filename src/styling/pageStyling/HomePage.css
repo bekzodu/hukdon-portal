@@ -1,0 +1,118 @@
+.home-container {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.main-content {
+  padding: 40px;
+  margin-left: 60px;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.shifted {
+  margin-left: 200px;
+}
+
+.dashboard-title {
+  margin-left: 20px;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.dashboard-content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.action-blocks {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.action-block {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 300px;
+}
+
+.action-block:hover {
+  transform: translateY(-5px);
+}
+
+.action-icon {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.action-block h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.action-block p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Add mobile-specific styles */
+@media screen and (max-width: 768px) {
+  .dashboard-content {
+    padding: 10px;
+  }
+
+  .action-blocks {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .action-block {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .main-content {
+    padding: 20px 10px;
+  }
+
+  .dashboard-title {
+    font-size: 1.5rem;
+    margin-left: 10px;
+  }
+}
+
+/* You can add this to your global CSS file */
+.Toastify__toast {
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.Toastify__toast-body {
+  font-family: inherit;
+}
+
+/* Add these styles for the logout confirmation toast */
+.logout-confirmation-toast {
+  background-color: #2d2d2d !important;
+  color: white !important;
+}
+
+.logout-confirmation-toast p {
+  margin: 0;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.logout-confirmation-toast button:hover {
+  opacity: 0.9;
+}
