@@ -1,11 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { FaBars, FaHome, FaStore, FaEnvelope, FaSignOutAlt } from 'react-icons/fa';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { FaBars, FaHome, FaStore, FaSignOutAlt } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import '../styling/componentStyling/Sidebar.css';
 
 const Sidebar = ({ isSidebarOpen, toggleSidebar, performLogout }) => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -50,19 +51,20 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar, performLogout }) => {
       </button>
       
       <div className="nav-links">
-        <button className="nav-btn" onClick={() => navigate('/home')}>
+        <button 
+          className={`nav-btn ${location.pathname === '/home' ? 'active' : ''}`} 
+          onClick={() => navigate('/home')}
+        >
           <FaHome />
           <span className="nav-text">Home</span>
         </button>
         
-        <button className="nav-btn" onClick={() => navigate('/stores')}>
+        <button 
+          className={`nav-btn ${location.pathname === '/stores' ? 'active' : ''}`} 
+          onClick={() => navigate('/stores')}
+        >
           <FaStore />
           <span className="nav-text">Stores</span>
-        </button>
-        
-        <button className="nav-btn">
-          <FaEnvelope />
-          <span className="nav-text">Messages</span>
         </button>
         
         <button className="nav-btn logout-btn" onClick={handleLogout}>

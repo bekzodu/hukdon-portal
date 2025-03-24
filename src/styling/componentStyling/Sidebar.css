@@ -79,3 +79,12 @@
   .logout-btn:hover {
     background-color: rgba(255, 70, 70, 0.2);
   }
+  
+  .nav-btn.active {
+    background-color: #1a1a1a;
+    border-left: 4px solid #ffffff;
+  }
+  
+  .nav-btn.active svg {
+    color: #ffffff;
+  }
