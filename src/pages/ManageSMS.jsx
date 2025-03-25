@@ -96,9 +96,15 @@ const ManageSMS = () => {
           <button className="close-button" onClick={() => navigate(`/store/${id}`)}>
             <FaTimes />
           </button>
-          <h1>SMS Console - {store.businessName}</h1>
-          <div className="store-phone">
-            <FaPhone /> {store.phone}
+          <div className="store-info">
+            <h1>📲 SMS Console</h1>
+            <div className="store-details">
+              <span className="store-name">{store.businessName}</span>
+              <span className="store-id">ID: {id}</span>
+              <div className="store-phone">
+                <FaPhone /> {store.phone}
+              </div>
+            </div>
           </div>
         </div>
 

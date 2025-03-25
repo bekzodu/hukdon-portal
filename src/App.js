@@ -7,6 +7,7 @@ import StoresPage from './pages/StoresPage';
 import StoreExpanded from './pages/StoreExpanded';
 import EditAccount from './pages/EditAccount';
 import ManageSMS from './pages/ManageSMS';
+import ManageRewards from './pages/ManageRewards';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
 import { StoresProvider } from './context/StoresContext';
@@ -26,6 +27,7 @@ function App() {
             <Route path="/store/:id" element={<StoreExpanded />} />
             <Route path="/stores/:id/edit" element={<EditAccount />} />
             <Route path="/stores/:id/sms" element={<ManageSMS />} />
+            <Route path="/stores/:id/rewards" element={<ManageRewards />} />
           </Routes>
         </Router>
       </StoresProvider>

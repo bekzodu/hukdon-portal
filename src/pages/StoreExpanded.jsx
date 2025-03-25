@@ -122,27 +122,27 @@ const StoreExpanded = () => {
   if (!store) return <div className="error-message">Store not found</div>;
 
   return (
-    <div className="store-expanded">
+    <div className="store-expanded-page">
       <Sidebar 
         isSidebarOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
         performLogout={performLogout}
       />
       
-      <div className={`main-content ${isSidebarOpen ? 'shifted' : ''}`}>
-        <button className="close-button" onClick={() => navigate('/stores')}>
+      <div className={`store-expanded-main-content ${isSidebarOpen ? 'store-expanded-shifted' : ''}`}>
+        <button className="store-expanded-close-button" onClick={() => navigate('/stores')}>
           <FaTimes />
         </button>
         
-        <div className="store-content">
-          <div className="store-header">
-            <div className="image-container">
+        <div className="store-expanded-content">
+          <div className="store-expanded-header">
+            <div className="store-expanded-image-container">
               <img
                 src={store.imageUrl || placeholderImage}
                 alt={store.businessName}
-                className="store-banner"
+                className="store-expanded-banner"
               />
-              <label className="image-upload-label" htmlFor="imageUpload">
+              <label className="store-expanded-image-upload-label" htmlFor="imageUpload">
                 <FaPen />
               </label>
               <input
@@ -152,28 +152,34 @@ const StoreExpanded = () => {
                 onChange={handleImageUpload}
                 style={{ display: 'none' }}
               />
-              {uploading && <div className="upload-overlay">Uploading...</div>}
+              {uploading && <div className="store-expanded-upload-overlay">Uploading...</div>}
             </div>
             <h1>{store.businessName}</h1>
             
-            <div className="store-actions">
+            <div className="store-expanded-actions">
               <button 
-                className="action-button edit-button"
+                className="store-expanded-action-button store-expanded-edit-button"
                 onClick={() => navigate(`/stores/${id}/edit`)}
               >
                 Edit Information
               </button>
               <button 
-                className="action-button sms-button"
+                className="store-expanded-action-button store-expanded-sms-button"
                 onClick={() => navigate(`/stores/${id}/sms`)}
               >
                 Manage SMS
               </button>
+              <button 
+                className="store-expanded-action-button store-expanded-rewards-button"
+                onClick={() => navigate(`/stores/${id}/rewards`)}
+              >
+                Manage Rewards
+              </button>
             </div>
           </div>
 
-          <div className="store-details">
-            <div className="detail-section contact-info">
+          <div className="store-expanded-details">
+            <div className="store-expanded-detail-section contact-info">
               <h2><FaUser /> Business Information</h2>
               <p><strong>Business Name:</strong> {store.businessName}</p>
               <p><strong>Contact Name:</strong> {store.contactName}</p>
@@ -181,13 +187,13 @@ const StoreExpanded = () => {
               <p><strong>Status:</strong> {store.active ? 'Active' : 'Inactive'}</p>
             </div>
 
-            <div className="detail-section contact-info">
+            <div className="store-expanded-detail-section contact-info">
               <h2><FaEnvelope /> Contact Information</h2>
               <p><FaEnvelope /> {store.email}</p>
               <p><FaPhone /> {store.phone}</p>
             </div>
 
-            <div className="detail-section location">
+            <div className="store-expanded-detail-section location">
               <h2><FaMapMarkerAlt /> Location</h2>
               <p><strong>Street:</strong> {store.address?.street}</p>
               <p><strong>City:</strong> {store.address?.city}</p>
@@ -196,7 +202,7 @@ const StoreExpanded = () => {
             </div>
 
             {store.twilioStatus && (
-              <div className="detail-section">
+              <div className="store-expanded-detail-section">
                 <h2>Twilio Information</h2>
                 <p><strong>Status:</strong> {store.twilioStatus}</p>
                 {store.twilioNumber && (
